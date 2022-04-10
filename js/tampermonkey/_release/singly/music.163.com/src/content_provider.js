@@ -297,18 +297,18 @@
                 }
 
                 p1.textContent = errors.join('//');
-                self.catchLyricBoxSizeTimer.setNewTtl(3, 0, function (trigger) {
+                self.catchLyricBoxSizeTimer.setNewTtl(3, -1, function (trigger) {
                     trigger.closeFlag();
-                    top.window.kl.log('catch_lyric_box_size_timer');
                     self.config.height = self.scrollHeight;
-                    self.config.diffHeight = self.scrollHeight - self.offsetHeight;
+                    self.config.diffHeight = self.scrollHeight - self.parentElement.offsetHeight + 150;
                     self.config.diffPHeight = Math.round(self.config.diffHeight / (self.allPTotal + 1));
                     //self.config.top = self.scroll.top;
                     self.config.pHeight = Math.round(self.config.height / (self.allPTotal + 1));
-                    top.window.kl.log('scroll2sec init', self.config, self.scrollHeight, self.offsetHeight, self.allPTotal);
+                    top.window.kl.log('scroll2sec init', self.config, self.scrollHeight, self.parentElement.offsetHeight, self.allPTotal);
                     top.window.kl.log('scroll2sec height error', self.config.height);
                     self.config.init = true;
                     self.config.scrollLock = false;
+                    top.window.kl.log('catch_lyric_box_size_timer', self.scrollHeight, self.parentElement.offsetHeight, self.config);
 
                 });
                 return self;
@@ -320,7 +320,7 @@
                     return false;
                 }
                 if (self.config.scrollLock === true) {
-                    // top.window.kl.log('scroll2sec self.config.scrollLock===true');
+                    //top.window.kl.log('scroll2sec self.config.scrollLock===true');
                     return false;
                 }
                 self.config.scrollLock = true;
@@ -885,7 +885,7 @@
                             '.comment_list_div>.itm{border:1px solid #AAA;}' +
 
 
-                            '.kl_kiwi_audio_grid button{display:block;float:left;width:100%;background:#FFF !important;border:3px solid #FFF !important;color:#000 !important;}' +
+                            '.kl_kiwi_audio_grid button{display:block !important;float:left !important;width:98% !important;background:#FFF !important;border:3px solid #FFF !important;color:#000 !important;margin-left:1% !important;}' +
                             '.kl_kiwi_audio_grid button:focus{border:solid #000 3px !important;background:#FFF !important;color:#000 !important;}' +
                             '.kl_kiwi_audio_grid{display:block;float:left;width:100%;}' +
                             '.kl_kiwi_audio_grid,.kl_kiwi_audio_grid>*,.kl_kiwi_audio_grid tr,.kl_kiwi_audio_grid td,.kl_kiwi_audio_grid button{display:block;float:left;width:100%;}' +

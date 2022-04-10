@@ -107,7 +107,7 @@
             {
                 text: '关闭页面', handleKey: 'test', type: 'fun', fun: function () {
                     // window.close();
-                    window.localStorage.setItem('close_current_window', 'true');
+                    top.window.kl.closeCurrentWindow = true;
                 }
             },
             {
