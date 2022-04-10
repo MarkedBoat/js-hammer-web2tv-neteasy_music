@@ -72,6 +72,7 @@
             this._kl_info.url = url;
             this._kl_info.method = method;
             this._kl_info.sync = sync;
+            this._kl_info.headers = [];
             this.realOpen3(method, url, sync);
         };
 
@@ -101,6 +102,7 @@
                         }
                     }, true);
                     tmp_xhr.realSend(value);
+                    xhr._kl_info.headers = [];
                 }
             });
             this.realSend(value);
