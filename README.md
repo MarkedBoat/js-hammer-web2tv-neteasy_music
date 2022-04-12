@@ -24,3 +24,8 @@ content_provider.js 用于 具体网站的业务处理，当前文件是处理�
 
 //@include:hammer/tv/grid.js    提供电视页面数据展示的工具类，如将歌曲列表展示为一个网格，提供数据选择、翻页等
 
+
+# 功能演示
+
+https://www.youtube.com/watch?v=puAGj_NXKlM
+https://www.bilibili.com/video/BV1444y1V7qN/
